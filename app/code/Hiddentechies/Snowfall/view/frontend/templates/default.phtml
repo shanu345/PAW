@@ -1,0 +1,38 @@
+<?php
+$_helper = $this->helper('Hiddentechies\Snowfall\Helper\Data');
+$enable = $_helper->getConfigValue('snowfallconfig/general/enable');
+if ($enable) {
+    $flakeCount = $_helper->getConfigValue('snowfallconfig/general/flake_count');
+    $flakeColor = $_helper->getConfigValue('snowfallconfig/general/flake_color');
+    $minSize = $_helper->getConfigValue('snowfallconfig/general/min_size');
+    $maxSize = $_helper->getConfigValue('snowfallconfig/general/max_size');
+    $minSpeed = $_helper->getConfigValue('snowfallconfig/general/min_speed');
+    $maxSpeed = $_helper->getConfigValue('snowfallconfig/general/max_speed');
+    $round = $_helper->getConfigValue('snowfallconfig/general/round');
+    $shadow = $_helper->getConfigValue('snowfallconfig/general/shadow');
+    ?>
+    <script>
+        require(['jquery', 'Hiddentechies_Snowfall/js/snowfall.jquery'], function() {
+            jQuery(document).ready(function() {
+                jQuery(document).snowfall({
+                    flakeCount: <?php echo $flakeCount; ?>,
+                    flakeColor: '<?php echo '#' . $flakeColor; ?>',
+                    minSize: <?php echo $minSize; ?>,
+                    maxSize: <?php echo $maxSize; ?>,
+                    minSpeed: <?php echo $minSpeed; ?>,
+                    maxSpeed: <?php echo $maxSpeed; ?>,
+                    <?php if ($round == 1) { ?>
+                        round: true,
+                    <?php } else { ?>
+                        round: false,
+                    <?php } ?>
+                    <?php if ($shadow == 1) { ?>
+                        shadow: true
+                    <?php } else { ?>
+                        shadow: false
+                    <?php } ?>
+                });
+            });
+        });
+    </script>
+<?php } ?>

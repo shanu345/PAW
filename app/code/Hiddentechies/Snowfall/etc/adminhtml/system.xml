@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Backend/etc/system_file.xsd">
+    <system>
+        <section id="snowfallconfig" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Snowfall</label>
+            <tab>hiddentechies</tab>
+            <resource>Hiddentechies_Snowfall::configurations</resource>
+            <group id="htinformation" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Product Information</label>
+                <attribute type="expanded">1</attribute>
+                <field id="product_info" translate="label comment" type="text" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <frontend_model>Hiddentechies\Base\Block\Adminhtml\System\Config\Form\Info</frontend_model>
+                </field>
+            </group>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Settings</label>
+                <field id="enable" translate="label" type="select" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="flake_count" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Number of Flakes</label>
+                    <comment><![CDATA[Recommended 100]]></comment>
+                </field>
+                <field id="flake_color" translate="label comment" type="text" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Snow Flake Color</label>
+                    <backend_model>Hiddentechies\Snowfall\Model\Config\Validatecolor</backend_model>
+                    <frontend_model>Hiddentechies\Snowfall\Block\Color</frontend_model>
+                </field>
+                <field id="min_size" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Min Snow Flake Size (px)</label>
+                </field>
+                <field id="max_size" translate="label comment" type="text" sortOrder="25" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Max Snow Flake Size (px)</label>
+                </field>
+                <field id="min_speed" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Snow Flake Minimum Speed Seconds</label>
+                    <comment><![CDATA[Top to Bottom Speed: Must be less than Snow Flake Maximum Speed]]></comment>
+                </field>
+                <field id="max_speed" translate="label comment" type="text" sortOrder="35" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Snow Flake Maximum Speed Seconds</label>
+                    <comment><![CDATA[Top to Bottom Speed: Must be greator than Snow Flake Minimum Speed]]></comment>
+                </field>
+                <field id="round" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Round</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="shadow" translate="label" type="select" sortOrder="45" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Shadow</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

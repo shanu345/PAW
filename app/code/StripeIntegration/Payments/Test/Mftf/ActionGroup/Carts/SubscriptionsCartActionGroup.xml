@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+    <actionGroup name="SubscriptionsCartActionGroup">
+        <annotations>
+            <description>Create a cart which includes various types of subscriptions.</description>
+        </annotations>
+
+        <amOnPage url="{{StorefrontProductPage.url($$createVirtualMonthlySubscriptionProduct.custom_attributes[url_key]$$)}}" stepKey="goToVirtualMonthlySubscriptionProductPage"/>
+        <waitForPageLoad stepKey="waitForVirtualMonthlySubscriptionProductPageToLoad" time="60"/>
+        <fillField userInput="2" selector="{{StorefrontProductPageSection.qtyInput}}" stepKey="fillVirtualMonthlySubscriptionProductQty"/>
+        <click selector="{{StorefrontProductInfoMainSection.AddToCart}}" stepKey="clickAddToCartVirtualMonthlySubscriptionProduct"/>
+
+        <amOnPage url="{{StorefrontProductPage.url($$createVirtualTrialMonthlySubscriptionProduct.custom_attributes[url_key]$$)}}" stepKey="goToVirtualTrialMonthlySubscriptionProductPage"/>
+        <waitForPageLoad stepKey="waitForVirtualTrialMonthlySubscriptionProductPageToLoad" time="60"/>
+        <fillField userInput="2" selector="{{StorefrontProductPageSection.qtyInput}}" stepKey="fillVirtualTrialMonthlySubscriptionProductQty"/>
+        <click selector="{{StorefrontProductInfoMainSection.AddToCart}}" stepKey="clickAddToCartVirtualTrialMonthlySubscriptionProduct"/>
+
+        <amOnPage url="{{StorefrontProductPage.url($$createSimpleMonthlySubscriptionInitialFeeProduct.custom_attributes[url_key]$$)}}" stepKey="goToSimpleMonthlySubscriptionInitialFeeProductPage"/>
+        <waitForPageLoad stepKey="waitForSimpleMonthlySubscriptionInitialFeeProductPageToLoad" time="60"/>
+        <fillField userInput="2" selector="{{StorefrontProductPageSection.qtyInput}}" stepKey="fillSimpleMonthlySubscriptionInitialFeeProductQty"/>
+        <click selector="{{StorefrontProductInfoMainSection.AddToCart}}" stepKey="clickAddToCartSimpleMonthlySubscriptionInitialFeeProduct"/>
+
+        <amOnPage url="{{StorefrontProductPage.url($$createSimpleTrialMonthlySubscriptionInitialFeeProduct.custom_attributes[url_key]$$)}}" stepKey="goToSimpleTrialMonthlySubscriptionInitialFeeProductPage"/>
+        <waitForPageLoad stepKey="waitForSimpleTrialMonthlySubscriptionInitialFeeProductPageToLoad" time="60"/>
+        <fillField userInput="2" selector="{{StorefrontProductPageSection.qtyInput}}" stepKey="fillSimpleTrialMonthlySubscriptionInitialFeeProductQty"/>
+        <click selector="{{StorefrontProductInfoMainSection.AddToCart}}" stepKey="clickAddToCartSimpleTrialMonthlySubscriptionInitialFeeProduct"/>
+
+    </actionGroup>
+</actionGroups>
+
+
+
+

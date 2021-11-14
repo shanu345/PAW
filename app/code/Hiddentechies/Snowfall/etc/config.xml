@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Store/etc/config.xsd">
+    <default>
+        <snowfallconfig>
+            <htinformation>
+                <activationproductsku>M2HTSE</activationproductsku>
+            </htinformation>
+            <general>
+                <enable>1</enable>
+                <flake_count>100</flake_count>
+                <flake_color>FFFFFF</flake_color>
+                <min_size>4</min_size>
+                <max_size>10</max_size>
+                <min_speed>1</min_speed>
+                <max_speed>15</max_speed>
+                <round>1</round>
+                <shadow>0</shadow>
+            </general>
+        </snowfallconfig>
+    </default>
+</config>

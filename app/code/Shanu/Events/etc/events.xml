@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+
+<event name="controller_action_predispatch_checkout_index_index">
+    <observer name="checkcout1_page" instance="Shanu\Events\Observer\CheckShoppingCartObserver" />
+ </event>
+	  
+</config>
+<!--<event name="checkout_onepage_controller_success_action">
+    <observer name="codextblog_guestocustomer_controller_success_action" instance="Codextblog\Guesttocustomer\Observer\Convertguest"  />
+ </event>-->

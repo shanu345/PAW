@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+    <actionGroup name="MixedCartActionGroup">
+        <annotations>
+            <description>Create a cart with both regular products and subscriptions.</description>
+        </annotations>
+
+        <amOnPage url="{{StorefrontProductPage.url($$createStripeSimpleProduct.custom_attributes[url_key]$$)}}" stepKey="goToStripeSimpleProductPage"/>
+        <waitForPageLoad stepKey="waitForStripeSimpleProductPageToLoad" time="60"/>
+        <fillField userInput="2" selector="{{StorefrontProductPageSection.qtyInput}}" stepKey="fillStripeSimpleProductQty"/>
+        <click selector="{{StorefrontProductInfoMainSection.AddToCart}}" stepKey="clickAddToCartStripeSimpleProduct"/>
+
+        <amOnPage url="{{StorefrontProductPage.url($$createSimpleMonthlySubscriptionProduct.custom_attributes[url_key]$$)}}" stepKey="goToSimpleMonthlySubscriptionProductPage"/>
+        <waitForPageLoad stepKey="waitForSimpleMonthlySubscriptionProductPageToLoad" time="60"/>
+        <fillField userInput="2" selector="{{StorefrontProductPageSection.qtyInput}}" stepKey="fillSimpleMonthlySubscriptionProductQty"/>
+        <click selector="{{StorefrontProductInfoMainSection.AddToCart}}" stepKey="clickAddToCartSimpleMonthlySubscriptionProduct"/>
+
+        <amOnPage url="{{StorefrontProductPage.url($$createSimpleTrialMonthlySubscriptionInitialFeeProduct.custom_attributes[url_key]$$)}}" stepKey="goToSimpleTrialMonthlySubscriptionInitialFeeProductPage"/>
+        <waitForPageLoad stepKey="waitForSimpleTrialMonthlySubscriptionInitialFeeProductPageToLoad" time="60"/>
+        <fillField userInput="2" selector="{{StorefrontProductPageSection.qtyInput}}" stepKey="fillSimpleTrialMonthlySubscriptionInitialFeeProductQty"/>
+        <click selector="{{StorefrontProductInfoMainSection.AddToCart}}" stepKey="clickAddToCartSimpleTrialMonthlySubscriptionInitialFeeProduct"/>
+
+    </actionGroup>
+</actionGroups>
+
+
+
+

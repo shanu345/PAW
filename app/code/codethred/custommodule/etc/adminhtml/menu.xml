@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <menu>
+	<add id="codethred_custommodule::custom_menu" title="Custom Menu" module="codethred_custommodule" sortOrder="80" resource="codethred_custommodule::custom_menu"/>
+	<add id="codethred_custommodule::menu1" title="Menu1" module="codethred_custommodule" sortOrder="10" action="" parent="codethred_custommodule::custom_menu" resource="codethred_custommodule::custom_Menu"/>
+	</menu>
+</config>
