@@ -429,7 +429,7 @@ class Subscriptions
             }
         }
 
-        return $coupon->id;;
+        return $coupon->id;
     }
 
     public function createSubscriptionForProduct($product, $order, $item, $isDryRun, $trialEnd = null)
